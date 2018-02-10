@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111001567-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-111001567-2');
+</script>
+
+  <title>EMOM Timer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    .jumbotron{
+      margin: 0px;
+      padding: 0px;
+      height: 70px;
+    }
+    body{
+      background-color: #E5E8E8;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    @media only screen and (min-width: 320px){
+      .time{
+        font-size: 100px;
+      }
+      #rounds{
+        font-size: 100px;
+      }
+    }
+    @media only screen and (min-width: 375px){
+      .time{
+        font-size: 120px;
+      }
+      #rounds{
+        font-size: 120px;
+      }
+    }
+    @media only screen and (min-width: 414px){
+      .time{
+        font-size: 120px;
+      }
+      #rounds{
+        font-size: 120px;
+      }
+    }
+    @media only screen and (min-width: 768px){
+      .time{
+        font-size: 200px;
+      }
+      #rounds{
+        font-size: 200px;
+      }
+      .row.content {height: 915px;}
+    }
+    @media only screen and (min-width: 1024px){
+      .time{
+        font-size: 260px;
+      }
+      #rounds{
+        font-size: 260px;
+      }
+      .row.content{height: 1250px;}
+    }
+    @media only screen and (min-width: 1367px){
+      .time{
+        font-size: 400px;
+      }
+      #rounds{
+        font-size: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"><img src="image.png" alt="image" height="30" width="30"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">TIME</a></li>
+        <li><a href="amrap.html">AMRAP</a></li>
+        <li><a href="emom.html">EMOM</a></li>
+        <li><a href="tabata.html">TABATA</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1 style="font-size: 30px; margin: 0px; padding: 0px;">Personal Timer</h1>      
+    <p>for crossfit workouts</p>
+  </div>
+</div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Wod timer web responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6541908916813033"
+     data-ad-slot="3780770096"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-12 text-left" style="margin: 0px;"> 
+      <h1>EMOM</h1>
+      <p id="timeMinutes" class="time" style="display: inline;">0</p><p class="time" style="display: inline;">:</p><p id="timeSeconds" class="time" style="display: inline;">00</p><p id="rounds" style="float: right; color: red;">0</p><br>
+      <button type="button" id="reset">Reset</button>
+      <hr>
+      <div id="inputBox">
+      <h3>Delayed Start</h3>
+      <p style="display: inline;">Seconds:</p>
+          <input name="seconds" type="number" id="input5" placeholder="optional" style="width: 80px;">
+      <h3>Countdown</h3>
+      <p style="display: inline;">Seconds:</p>
+          <input name="seconds" type="number" id="input2" style="width: 60px;">
+      <h3>Rounds</h3>
+      <p style="display: inline;">Rounds:</p>
+          <input name="minutes" type="number" id="input3" style="width: 60px;">
+          <button type="button" id="start">Start</button><br>
+    </div>
+  </div>
+  </div>
+</div><br>
+
+<footer class="container-fluid text-center">
+  <p>Copyright &copy; Joel Franco</p>
+</footer>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#play").hide()
+    $("#pause").hide()
+    $("#reset").hide()
+          var countdownSecondsInput;
+          var roundsInput;
+          var startStop;
+          var delayedTime;
+          var minutes = 0;
+          var seconds = 0;
+          var roundsCounter = 0
+          var sound = new Audio("3-2-1-sound.mp3");
+          function timerFunction(){
+              displayTime()
+              if (delayedTime != "" && delayedTime >= 0){
+                delayedTime -= 1
+              }else if (countdownSecondsInput > 0){
+                countdownSecondsInput -= 1
+              }else{
+                seconds += 1
+              }
+              if (seconds == 60){
+                minutes += 1
+                seconds = 0
+                roundsCounter += 1
+              }
+              if (countdownSecondsInput == 2){
+                sound.play();
+              }
+              
+              if (minutes == roundsInput){
+              clearInterval(startStop);
+              }
+          }
+          function startTime(){
+            startStop = setInterval(timerFunction, 1000);
+          }
+          function stopTime(){
+            clearInterval(startStop)
+          }
+          function displayTime(){
+              if (delayedTime > 0){
+                  $(".time").css("color", "red")
+              }else{
+                $(".time").css("color", "black")
+              }
+              if (delayedTime != "" && delayedTime >= 10){
+                $("#timeSeconds").text(delayedTime + " ")
+              }else if (delayedTime != "" && delayedTime < 10 && delayedTime >= 0){
+                $("#timeSeconds").text("0" + delayedTime + " ")
+              }else if (countdownSecondsInput >= 10){
+                $("#timeSeconds").text(countdownSecondsInput + " ")
+              }else if (countdownSecondsInput < 10 && countdownSecondsInput > 0){
+                $("#timeSeconds").text("0" + countdownSecondsInput + " ")
+                $("#rounds").text(minutes)     
+              }else if (countdownSecondsInput == 0 && seconds >= 10){
+                $("#timeSeconds").text(seconds + " ")
+                $("#timeMinutes").text(minutes)
+                $("#rounds").text(minutes)
+              }else if (countdownSecondsInput == 0 && seconds >= 0){
+                $("#timeSeconds").text("0" + seconds + " ")
+                $("#timeMinutes").text(minutes)
+                $("#rounds").text(minutes) 
+              }
+          }
+
+
+
+    $("#start").on("click", function(){ 
+          countdownSecondsInput = $("#input2").val();
+          roundsInput = $("#input3").val(); 
+          delayedTime = $("#input5").val();
+
+
+
+          if (!$.isNumeric(countdownSecondsInput) || !$.isNumeric(roundsInput) || countdownSecondsInput > 60 || countdownSecondsInput < 0 || roundsInput > 99){
+            alert("please enter a valid number!");
+          }else{    
+            startTime()
+            $("#inputBox").hide()          
+            $("#reset").show()
+          }
+
+    });
+    $("#reset").on("click", function(){
+            stopTime()
+            $("#reset").hide()
+            minutes = 0
+            seconds = 0
+            roundsInput = 0
+            $("#timeSeconds").text("00")
+            $("#timeSeconds").append(" ");
+            $("#timeMinutes").text(0)
+            $("#rounds").text("0")
+            $("#inputBox").show() 
+    });
+
+});
+</script>
+
+</body>
+</html>
+
